@@ -1,0 +1,11 @@
+import express from 'express';
+import { createUser, loginUser } from '../controllers/userControllers.js';
+
+import { isAdmin, checkIfUserLogged } from '../middleware/middleware.js';
+
+const router = express.Router();
+
+router.post('/create', checkIfUserLogged, isAdmin, createUser);
+router.post('/login', loginUser);
+
+export default router;
