@@ -81,7 +81,7 @@ const data = {
 const PartiesGraph = () => {
   return (
     <div className="w-[100%] h-[100%] bg-white shadow-md p-4">
-      <Bar data={data} options={options} />;
+      <Bar data={data} options={options} />
     </div>
   );
 };

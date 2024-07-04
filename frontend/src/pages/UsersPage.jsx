@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import UsersTable from '@/components/UsersTable';
 import AddUser from '@/components/AddUser';
-import PartiesGraph from '@/components/PartiesGraph';
 const UsersPage = () => {
   const [form, setForm] = useState({
     fullName: '',
@@ -11,7 +10,21 @@ const UsersPage = () => {
     role: '',
   });
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async () => {
+    const user = localStorage.setItem(
+      'user',
+      JSON.stringify([
+        {
+          fullName: form.fullName,
+          username: form.username,
+          email: form.email,
+          phone: form.phone,
+          role: form.role,
+        },
+      ])
+    );
+    return user;
+  };
   return (
     <div className="flex flex-col justify-start space-y-4">
       {/* Dialog Form */}
@@ -21,10 +34,6 @@ const UsersPage = () => {
       {/* Users Table */}
       <div className="bg-white shadow-md rounded-md">
         <UsersTable />
-      </div>
-
-      <div className="bg-white shadow-md rounded-md">
-        <PartiesGraph />
       </div>
     </div>
   );

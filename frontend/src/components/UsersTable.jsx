@@ -8,6 +8,9 @@ import {
 } from '@/components/ui/table';
 
 const UsersTable = () => {
+  const userData = JSON.parse(localStorage.getItem('user'));
+  console.log(userData);
+
   return (
     <Table>
       <TableHeader className="bg-slate-700">
@@ -20,34 +23,15 @@ const UsersTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableCell>Mohamed Ismail Ibrahim</TableCell>
-          <TableCell>maxamed 26june</TableCell>
-          <TableCell>maxamed12@test.com</TableCell>
-          <TableCell>+252633144082</TableCell>
-          <TableCell>User</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Mohamed Ismail Ibrahim</TableCell>
-          <TableCell>maxamed 26june</TableCell>
-          <TableCell>maxamed12@test.com</TableCell>
-          <TableCell>+252633144082</TableCell>
-          <TableCell>User</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Mohamed Ismail Ibrahim</TableCell>
-          <TableCell>maxamed 26june</TableCell>
-          <TableCell>maxamed12@test.com</TableCell>
-          <TableCell>+252633144082</TableCell>
-          <TableCell>User</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Mohamed Ismail Ibrahim</TableCell>
-          <TableCell>maxamed 26june</TableCell>
-          <TableCell>maxamed12@test.com</TableCell>
-          <TableCell>+252633144082</TableCell>
-          <TableCell>User</TableCell>
-        </TableRow>
+        {userData.map((list) => (
+          <TableRow key={list.phone}>
+            <TableCell>{list.fullName}</TableCell>
+            <TableCell>{list.username}</TableCell>
+            <TableCell>{list.email}</TableCell>
+            <TableCell>{list.phone}</TableCell>
+            <TableCell>{list.role}</TableCell>
+          </TableRow>
+        ))}
       </TableBody>
     </Table>
   );

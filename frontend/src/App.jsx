@@ -16,6 +16,7 @@ import {
 } from './pages';
 
 import AuthProvider from '@/context/AuthContext';
+import AllParties from './pages/AllParties';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
         <Route path="wadani" element={<WadaniPage />} />
         <Route path="ucid" element={<UcidPage />} />
         <Route path="users" element={<UsersPage />} />
+        <Route path="parties" element={<AllParties />} />
       </Route>
       <Route path="/login" element={<Login />} />
     </>

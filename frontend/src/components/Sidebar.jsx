@@ -1,4 +1,4 @@
-import { LayoutDashboard, Settings, Users } from 'lucide-react';
+import { LayoutDashboard, Users, Vote } from 'lucide-react';
 import { Button } from './ui/button';
 import { NavLink } from 'react-router-dom';
 
@@ -78,20 +78,20 @@ const Sidebar = () => {
               <Users />
               Users
             </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
+                  : 'flex items-center gap-2 font-semibold text-slate-800'
+              }
+              to="/parties"
+            >
+              <Vote />
+              Parties
+            </NavLink>
           </ul>
           <ul className="flex flex-col space-y-4 mt-5">
             <h3 className="text-gray-400 text-sm font-bold">Others</h3>
-            <NavLink
-              to="settings"
-              className={({ isActive }) =>
-                isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white px-4 py-2 '
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
-              }
-            >
-              <Settings />
-              Settings
-            </NavLink>
 
             <Button className="bg-orange-400 hover:bg-orange-500" size="lg">
               Logout
