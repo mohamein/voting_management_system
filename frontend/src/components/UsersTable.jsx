@@ -23,15 +23,34 @@ const UsersTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {userData.map((list) => (
-          <TableRow key={list.phone}>
-            <TableCell>{list.fullName}</TableCell>
-            <TableCell>{list.username}</TableCell>
-            <TableCell>{list.email}</TableCell>
-            <TableCell>{list.phone}</TableCell>
-            <TableCell>{list.role}</TableCell>
-          </TableRow>
-        ))}
+        <TableRow>
+          <TableCell>Maxamed Ismail</TableCell>
+          <TableCell>maxamed_26june</TableCell>
+          <TableCell>25263642846</TableCell>
+          <TableCell>mohamed@test.com</TableCell>
+          <TableCell>user</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Ahmed Jama</TableCell>
+          <TableCell>ahmed_october</TableCell>
+          <TableCell>25263642846</TableCell>
+          <TableCell>ahmed@test.com</TableCell>
+          <TableCell>user</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Faysal Khadar</TableCell>
+          <TableCell>faysal_macalin_harun</TableCell>
+          <TableCell>25263642846</TableCell>
+          <TableCell>faysal@test.com</TableCell>
+          <TableCell>user</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Nimco Ahmed</TableCell>
+          <TableCell>nimco_jigjigayar</TableCell>
+          <TableCell>25263642846</TableCell>
+          <TableCell>nimco@test.com</TableCell>
+          <TableCell>user</TableCell>
+        </TableRow>
       </TableBody>
     </Table>
   );
