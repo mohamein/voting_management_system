@@ -6,13 +6,13 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const login = async (username, password) => {
-    // const resp = await axios.post('http://localhost:5000/api/v1/users/login', {
-    //   username,
-    //   password,
-    // });
-    // localStorage.setItem('token', JSON.stringify(resp.data.token));
-    // setUser(resp.data);
-    // console.log(resp.data);
+    const resp = await axios.post('http://localhost:5000/api/v1/users/login', {
+      username,
+      password,
+    });
+    localStorage.setItem('token', JSON.stringify(resp.data.token));
+    setUser(resp.data);
+    console.log(resp.data);
   };
   return (
     <AuthContext.Provider value={{ user, login }}>
