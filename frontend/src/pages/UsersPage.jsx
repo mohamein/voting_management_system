@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import UsersTable from '@/components/UsersTable';
 import AddUser from '@/components/AddUser';
+import { createUser } from '../api/user_creation';
 const UsersPage = () => {
   const [form, setForm] = useState({
     fullName: '',
@@ -8,21 +9,18 @@ const UsersPage = () => {
     email: '',
     phone: '',
     role: '',
+    password: '',
   });
 
   const handleSubmit = async () => {
-    const user = localStorage.setItem(
-      'user',
-      JSON.stringify([
-        {
-          fullName: form.fullName,
-          username: form.username,
-          email: form.email,
-          phone: form.phone,
-          role: form.role,
-        },
-      ])
-    );
+    const user = await createUser({
+      full_name: form.fullName,
+      username: form.username,
+      email: form.email,
+      phone: form.phone,
+      role: form.role,
+      password: form.password,
+    });
     return user;
   };
   return (

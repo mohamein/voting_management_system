@@ -3,6 +3,9 @@ import { Button } from './ui/button';
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
+  const handleLogout = () => {
+    localStorage.clear();
+  };
   return (
     <div className="w-[250px] h-full bg-white p-5 ">
       <div className="flex flex-col justify-center space-y-4 w-full">
@@ -25,7 +28,7 @@ const Sidebar = () => {
               <LayoutDashboard />
               Dashboard
             </NavLink>
-            <NavLink
+            {/* <NavLink
               className={({ isActive }) =>
                 isActive
                   ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
@@ -66,7 +69,7 @@ const Sidebar = () => {
                 className="w-[30px] h-[30px] object-cover rounded-full"
               />
               Ucid
-            </NavLink>
+            </NavLink> */}
             <NavLink
               className={({ isActive }) =>
                 isActive
@@ -84,16 +87,31 @@ const Sidebar = () => {
                   ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
                   : 'flex items-center gap-2 font-semibold text-slate-800'
               }
-              to="/parties"
+              to="/xisbi"
             >
               <Vote />
-              Parties
+              Xisbiyada
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
+                  : 'flex items-center gap-2 font-semibold text-slate-800'
+              }
+              to="/urur"
+            >
+              <Vote />
+              Ururada
             </NavLink>
           </ul>
           <ul className="flex flex-col space-y-4 mt-5">
             <h3 className="text-gray-400 text-sm font-bold">Others</h3>
 
-            <Button className="bg-orange-400 hover:bg-orange-500" size="lg">
+            <Button
+              className="bg-orange-400 hover:bg-orange-500 font-semibold"
+              size="lg"
+              onClick={handleLogout}
+            >
               Logout
             </Button>
           </ul>

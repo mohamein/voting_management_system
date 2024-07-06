@@ -1,10 +1,8 @@
-import { useContext, useEffect } from 'react';
 import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
   Route,
-  useNavigation,
 } from 'react-router-dom';
 
 import MainLayout from './layouts/MainLayout';
@@ -18,8 +16,8 @@ import {
 } from './pages';
 
 import AuthProvider from '@/context/AuthContext';
-import AllParties from './pages/AllParties';
-import { AuthContext } from './context/AuthContext';
+import AllPartiesPage from './pages/AllPartiesPage';
+import XisbiyadaPage from './pages/XisbiyadaPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,20 +28,14 @@ const router = createBrowserRouter(
         <Route path="wadani" element={<WadaniPage />} />
         <Route path="ucid" element={<UcidPage />} />
         <Route path="users" element={<UsersPage />} />
-        <Route path="parties" element={<AllParties />} />
+        <Route path="urur" element={<AllPartiesPage />} />
+        <Route path="xisbi" element={<XisbiyadaPage />} />
       </Route>
       <Route path="/login" element={<Login />} />
     </>
   )
 );
 function App() {
-  const { user } = useContext(AuthContext);
-  const navigate = useNavigation();
-  useEffect(() => {
-    if (!user) {
-      navigate('/sign-in');
-    }
-  }, [user, navigate]);
   return (
     <>
       <AuthProvider>

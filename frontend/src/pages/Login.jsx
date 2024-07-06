@@ -10,7 +10,9 @@ const Login = () => {
 
   const handleSubmit = async () => {
     const result = await login(username, password);
-    return navigate('/');
+    if (result) {
+      navigate('/');
+    }
   };
   return (
     <div className="flex items-center justify-center h-screen w-screen bg-[#ededed] ">

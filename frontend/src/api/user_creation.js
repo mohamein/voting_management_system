@@ -13,3 +13,11 @@ export const createUser = async (data) => {
     console.log(err.message);
   }
 };
+
+export const getAllUsers = async () => {
+  const resp = await axios.get('http://localhost:5000/api/v1/users/');
+  if (!resp) {
+    console.log('User have not found');
+  }
+  return resp;
+};

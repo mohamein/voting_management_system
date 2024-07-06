@@ -67,4 +67,17 @@ const loginUser = async (req, res) => {
   }
 };
 
-export { createUser, loginUser };
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find();
+    if (!users) {
+      res.status(404).json({ message: 'Users Not Found' });
+    }
+
+    return res.status(200).json({ message: 'users found', users });
+  } catch (err) {
+    console.log(`Error: ${err.message}`);
+  }
+};
+
+export { createUser, loginUser, getAllUsers };

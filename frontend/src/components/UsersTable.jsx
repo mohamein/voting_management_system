@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import {
   Table,
   TableBody,
@@ -6,10 +8,23 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-
+import { getAllUsers } from '../api/user_creation';
+import { Edit, Trash } from 'lucide-react';
 const UsersTable = () => {
-  const userData = JSON.parse(localStorage.getItem('user'));
-  console.log(userData);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const usersData = await getAllUsers();
+        console.log(usersData);
+        setUsers(usersData);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+    fetchUsers();
+  }, []);
 
   return (
     <Table>
@@ -20,37 +35,25 @@ const UsersTable = () => {
           <TableHead className=" text-white">Email:</TableHead>
           <TableHead className=" text-white">Phone:</TableHead>
           <TableHead className=" text-white">Role:</TableHead>
+          <TableHead className=" text-white"></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableCell>Maxamed Ismail</TableCell>
-          <TableCell>maxamed_26june</TableCell>
-          <TableCell>25263642846</TableCell>
-          <TableCell>mohamed@test.com</TableCell>
-          <TableCell>user</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Ahmed Jama</TableCell>
-          <TableCell>ahmed_october</TableCell>
-          <TableCell>25263642846</TableCell>
-          <TableCell>ahmed@test.com</TableCell>
-          <TableCell>user</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Faysal Khadar</TableCell>
-          <TableCell>faysal_macalin_harun</TableCell>
-          <TableCell>25263642846</TableCell>
-          <TableCell>faysal@test.com</TableCell>
-          <TableCell>user</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell>Nimco Ahmed</TableCell>
-          <TableCell>nimco_jigjigayar</TableCell>
-          <TableCell>25263642846</TableCell>
-          <TableCell>nimco@test.com</TableCell>
-          <TableCell>user</TableCell>
-        </TableRow>
+        {users?.data?.users.map((user) => (
+          <TableRow key={user._id}>
+            <TableCell>{user.full_name}</TableCell>
+            <TableCell>{user.username}</TableCell>
+            <TableCell>{user.email}</TableCell>
+            <TableCell>{user.phone}</TableCell>
+            <TableCell>{user.role}</TableCell>
+            <TableCell>
+              <button className="flex gap-2">
+                <Edit className="text-red-300 w-[20px]" /> /
+                <Trash className="text-green-300 w-[20px]" />
+              </button>
+            </TableCell>
+          </TableRow>
+        ))}
       </TableBody>
     </Table>
   );

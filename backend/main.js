@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import connectToDb from '../backend/config/dbConnection.js';
 import userRouter from '../backend/routes/userRoute.js';
 import presidentialRoute from '../backend/routes/presidentialRoute.js';
+import partiesRoute from '../backend/routes/partiesRoute.js';
 dotenv.config();
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.static('images'));
 // routes
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/votes', presidentialRoute);
+app.use('/api/v1/parties', partiesRoute);
 // PORT
 const PORT = process.env.PORT || 8080;
 
