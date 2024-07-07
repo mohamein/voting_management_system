@@ -81,4 +81,46 @@ const updateVote = async (req, res) => {
   }
 };
 
-export { createVote, getAllVotesWithUsers, deleteVote, updateVote };
+const viewKulmiye = async (req, res) => {
+  try {
+    const kulmiye = await Presidential.find(
+      {},
+      { magalada: 1, goobtaCodka: 1, kulmiye: 1, user: 1 }
+    );
+    console.log(kulmiye);
+  } catch (err) {
+    console.log(`Error: ${err.message}`);
+  }
+};
+const viewWaddani = async (req, res) => {
+  try {
+    const kulmiye = await Presidential.find(
+      {},
+      { magalada: 1, goobtaCodka: 1, waddani: 1, user: 1 }
+    );
+    console.log(kulmiye);
+  } catch (err) {
+    console.log(`Error: ${err.message}`);
+  }
+};
+const viewUcid = async (req, res) => {
+  try {
+    const kulmiye = await Presidential.find(
+      {},
+      { magalada: 1, goobtaCodka: 1, ucid: 1, user: 1 }
+    );
+    console.log(kulmiye);
+  } catch (err) {
+    console.log(`Error: ${err.message}`);
+  }
+};
+
+export {
+  createVote,
+  getAllVotesWithUsers,
+  deleteVote,
+  updateVote,
+  viewKulmiye,
+  viewWaddani,
+  viewUcid,
+};

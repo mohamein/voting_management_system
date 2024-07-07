@@ -24,5 +24,17 @@ const getParties = async () => {
     console.log(`Error at Getting Parties: ${err.message}`);
   }
 };
+// const viewKulmiye = async (req, res) => {
+//   try {
+//     const kulmiye = await Parties.find(
+//       {},
+//       { magalada: 1, goobtaCodka: 1, kulmiye: 1 }
+//     );
+//     console.log(kulmiye);
+//   } catch (err) {
+//     console.log(`Error: ${err.message}`);
+//   }
+// };
 
+// viewKulmiye();
 export { createParties, getParties };
