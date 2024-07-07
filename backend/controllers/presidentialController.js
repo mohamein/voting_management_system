@@ -86,30 +86,30 @@ const viewKulmiye = async (req, res) => {
     const kulmiye = await Presidential.find(
       {},
       { magalada: 1, goobtaCodka: 1, kulmiye: 1, user: 1 }
-    );
-    console.log(kulmiye);
+    ).populate('user');
+    return res.status(200).json({ message: 'Data found', kulmiye });
   } catch (err) {
     console.log(`Error: ${err.message}`);
   }
 };
 const viewWaddani = async (req, res) => {
   try {
-    const kulmiye = await Presidential.find(
+    const waddani = await Presidential.find(
       {},
       { magalada: 1, goobtaCodka: 1, waddani: 1, user: 1 }
-    );
-    console.log(kulmiye);
+    ).populate('user');
+    return res.status(200).json({ message: 'Data found', waddani });
   } catch (err) {
     console.log(`Error: ${err.message}`);
   }
 };
 const viewUcid = async (req, res) => {
   try {
-    const kulmiye = await Presidential.find(
+    const ucid = await Presidential.find(
       {},
       { magalada: 1, goobtaCodka: 1, ucid: 1, user: 1 }
-    );
-    console.log(kulmiye);
+    ).populate('user');
+    return res.status(200).json({ message: 'Data found', ucid });
   } catch (err) {
     console.log(`Error: ${err.message}`);
   }

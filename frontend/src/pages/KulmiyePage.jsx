@@ -14,24 +14,35 @@ const KulmiyePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const resp = await getKulmiye();
-
-      console.log(resp.data);
       setVote(resp.data);
     };
 
     fetchData();
   }, []);
+
   return (
     <>
       <div className="bg-white shadow-md rounded-md">
         <Table>
-          <TableHeader>
-            <TableHead>Magalada:</TableHead>
-            <TableHead>Goobta Codka:</TableHead>
-            <TableHead>Tirada Codka</TableHead>
+          <TableHeader className="bg-slate-700">
+            <TableHead className="text-white">Magalada:</TableHead>
+            <TableHead className="text-white">Goobta Codka:</TableHead>
+            <TableHead className="text-white">Magaca:</TableHead>
+            <TableHead className="text-white">Phone:</TableHead>
+            <TableHead className="text-white">Tirada Codka</TableHead>
           </TableHeader>
 
-          <TableBody></TableBody>
+          <TableBody>
+            {vote?.kulmiye?.map((list) => (
+              <TableRow key={list._id}>
+                <TableCell>{list.magalada}</TableCell>
+                <TableCell>{list.goobtaCodka}</TableCell>
+                <TableCell>{list.user.full_name}</TableCell>
+                <TableCell>{list.user.phone}</TableCell>
+                <TableCell>{list.kulmiye}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
         </Table>
       </div>
     </>
