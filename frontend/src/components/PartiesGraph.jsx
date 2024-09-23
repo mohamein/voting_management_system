@@ -26,7 +26,7 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Natiijada Dorashada Axsabta',
+      text: 'Natiijada Dorashada Urarada',
     },
   },
 };
@@ -37,44 +37,54 @@ const data = {
   labels,
   datasets: [
     {
-      label: 'Kulmiye',
-      data: [5000, 3000, 1500, 1000, 1000, 1000],
-      backgroundColor: 'yellow',
+      label: 'BARWAAQO',
+      data: [900, 850, 900, 800, 750, 650],
+      backgroundColor: 'lightgreen',
     },
     {
-      label: 'Waddani',
-      data: [4000, 2500, 3000, 1500, 550, 500],
+      label: 'REJO',
+      data: [900, 850, 900, 800, 750, 650],
       backgroundColor: 'orange',
     },
     {
-      label: 'Kaah',
-      data: [3500, 2550, 2500, 1550, 2000, 850],
-      backgroundColor: 'red',
+      label: 'HORSEED',
+      backgroundColor: 'green',
+      data: [2000, 1000, 900, 700, 650, 550],
     },
     {
-      label: 'Horseed',
+      label: 'TALO-WADAAG',
       data: [800, 500, 600, 600, 550, 250],
       backgroundColor: 'skyblue',
     },
     {
-      label: 'Hilaac',
+      label: 'UCID',
       data: [900, 700, 600, 500, 750, 550],
       backgroundColor: 'pink',
     },
     {
-      label: 'Ucid',
-      data: [2000, 1000, 900, 700, 650, 550],
-      backgroundColor: 'green',
+      label: 'KAAH',
+      data: [3500, 2550, 2500, 1550, 2000, 850],
+      backgroundColor: 'red',
     },
     {
-      label: 'Barwaaqo',
+      label: 'HILAAC',
       data: [800, 500, 1000, 700, 650, 250],
       backgroundColor: 'blue',
     },
     {
-      label: 'Rajo',
+      label: 'SHACABKA',
       data: [900, 850, 900, 800, 750, 650],
+      backgroundColor: 'purple',
+    },
+    {
+      label: 'WADDANI',
+      data: [4000, 2500, 3000, 1500, 550, 500],
       backgroundColor: 'orange',
+    },
+    {
+      label: 'KULMIYE',
+      data: [5000, 3000, 1500, 1000, 1000, 1000],
+      backgroundColor: 'yellow',
     },
   ],
 };

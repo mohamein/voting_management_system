@@ -19,8 +19,8 @@ const Sidebar = () => {
         </div>
 
         <nav className="flex flex-col items-start justify-between h-full">
-          <ul className="flex flex-col space-y-5 border-b border-black pb-3">
-            <h3 className="text-gray-400 text-sm font-bold">Main Menu</h3>
+          <ul className="flex flex-col space-y-5 ">
+            <h3 className="text-red-200 text-sm font-bold">Main Menu</h3>
 
             <NavLink
               className={({ isActive }) =>
@@ -68,9 +68,7 @@ const Sidebar = () => {
               Ururada
             </NavLink>
           </ul>
-          <ul className="flex flex-col space-y-4 mt-5">
-            <h3 className="text-gray-400 text-sm font-bold">Others</h3>
-
+          <ul className="flex flex-col mt-5">
             <Button
               className="bg-red-400 hover:bg-red-500 font-semibold"
               size="lg"
