@@ -5,7 +5,7 @@ import Charts from './Charts';
 const Main = () => {
   return (
     <div className="flex justify-between gap-4">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-1 flex-col gap-3">
         <Cards />
         <Charts />
       </div>

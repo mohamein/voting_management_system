@@ -30,25 +30,32 @@ const partiesSchema = new Schema(
       type: String,
       required: true,
     },
-
     hilaac: {
       type: String,
       required: true,
     },
-
     horseed: {
       type: String,
       required: true,
     },
-
     rajo: {
       type: String,
       required: true,
     },
-
     barwaaqo: {
       type: String,
       required: true,
+    },
+    Ansaxay: {
+      type: String,
+      required: true,
+    },
+    aanAnSixin: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
     },
   },
   {

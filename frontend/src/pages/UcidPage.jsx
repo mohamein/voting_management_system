@@ -21,10 +21,13 @@ const UcidPage = () => {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col gap-4">
+      <h2 className="text-xl text-gray-600 font-semibold">
+        Codka Xisbiga Ucid
+      </h2>
       <div className="bg-white shadow-md rounded-md">
         <Table>
-          <TableHeader className="bg-slate-700">
+          <TableHeader className="bg-red-600">
             <TableHead className="text-white">Magalada:</TableHead>
             <TableHead className="text-white">Goobta Codka:</TableHead>
             <TableHead className="text-white">Magaca:</TableHead>
@@ -45,7 +48,7 @@ const UcidPage = () => {
           </TableBody>
         </Table>
       </div>
-    </>
+    </div>
   );
 };
 

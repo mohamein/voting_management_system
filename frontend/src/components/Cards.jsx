@@ -3,9 +3,9 @@ import PartyCard from './Card';
 const Cards = () => {
   return (
     <div className="flex items-center gap-4">
-      <div className="grid grid-cols-3 place-content-center gap-4">
+      <div className="grid grid-cols-3 place-content-center gap-4 w-full">
         <PartyCard
-          title="Xisbiga Kulmite"
+          title="Xisbiga Kulmiye"
           numberOfVotes={80000}
           link="kulmiye"
           imgUrl="/kulmiye.jpg"

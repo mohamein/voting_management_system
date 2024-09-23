@@ -24,9 +24,8 @@ const PresidentialTable = () => {
 
   return (
     <Table>
-      <TableHeader className="bg-slate-700">
+      <TableHeader className="bg-red-600">
         <TableRow>
-          <TableHead className="text-white"></TableHead>
           <TableHead className="text-white">Magalada:</TableHead>
           <TableHead className="text-white">Goobta:</TableHead>
           <TableHead className="text-white">Name:</TableHead>
@@ -42,9 +41,6 @@ const PresidentialTable = () => {
       <TableBody>
         {votes?.data?.map((vote) => (
           <TableRow key={vote._id}>
-            <TableCell className="underline text-blue-400 text-sm">
-              View
-            </TableCell>
             <TableCell>{vote.magalada}</TableCell>
             <TableCell>{vote.goobtaCodka}</TableCell>
             <TableCell>{vote.user.full_name}</TableCell>
@@ -52,8 +48,8 @@ const PresidentialTable = () => {
             <TableCell>{vote.kulmiye}</TableCell>
             <TableCell>{vote.waddani}</TableCell>
             <TableCell>{vote.ucid}</TableCell>
-            <TableCell>{vote.codadkaLumay}</TableCell>
-            <TableCell>{vote.codadkaKhaldamay}</TableCell>
+            <TableCell>{vote.Ansaxay}</TableCell>
+            <TableCell>{vote.aanAnSixin}</TableCell>
             <TableCell>
               <button className="flex gap-2">
                 <Edit className="text-red-300 w-[20px]" /> /

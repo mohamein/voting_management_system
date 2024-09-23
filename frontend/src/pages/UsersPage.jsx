@@ -8,6 +8,7 @@ const UsersPage = () => {
     username: '',
     email: '',
     phone: '',
+    phone1: '',
     role: '',
     password: '',
   });
@@ -18,6 +19,7 @@ const UsersPage = () => {
       username: form.username,
       email: form.email,
       phone: form.phone,
+      phone1: form.phone1,
       role: form.role,
       password: form.password,
     });

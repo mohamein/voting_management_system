@@ -1,80 +1,44 @@
 import { LayoutDashboard, Users, Vote } from 'lucide-react';
 import { Button } from './ui/button';
 import { NavLink } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 const Sidebar = () => {
+  const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.clear();
+
+    navigate('/login');
   };
   return (
-    <div className="w-[250px] h-full bg-white p-5 ">
-      <div className="flex flex-col justify-center space-y-4 w-full">
-        <div className="flex justify-between items-center mb-5 border-b border-black pb-5">
-          <h2 className="text-xl font-semibold">Logo Party</h2>
+    <div className="w-[250px] h-[100vh] bg-white p-5 ">
+      <div className="flex flex-col justify-center space-y-4 w-full h-full">
+        <div className="flex justify-between items-center mb-5 border-b border-slate-300 pb-5">
+          <h2 className="text-2xl uppercase font-bold text-gray-600">
+            <span className="text-red-500">Kaah</span> Party
+          </h2>
         </div>
 
-        <nav>
+        <nav className="flex flex-col items-start justify-between h-full">
           <ul className="flex flex-col space-y-5 border-b border-black pb-3">
             <h3 className="text-gray-400 text-sm font-bold">Main Menu</h3>
 
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white px-4 py-2'
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
+                  ? 'flex items-center gap-2 bg-red-700 text-white px-4 py-2'
+                  : 'flex items-center gap-2 font-semibold text-red-600'
               }
               to="/"
             >
               <LayoutDashboard />
               Dashboard
             </NavLink>
-            {/* <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
-              }
-              to="/kulmiye"
-            >
-              <img
-                src="/kulmiye.jpg"
-                className="w-[30px] h-[30px] object-cover rounded-full"
-              />
-              Kulmiye
-            </NavLink>
+
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white px-4 py-2 '
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
-              }
-              to="/wadani"
-            >
-              <img
-                src="/waddani.png"
-                className="w-[30px] h-[30px] object-cover rounded-full"
-              />
-              Waddani
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
-              }
-              to="/ucid"
-            >
-              <img
-                src="/ucid.png"
-                className="w-[30px] h-[30px] object-cover rounded-full"
-              />
-              Ucid
-            </NavLink> */}
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
+                  ? 'flex items-center gap-2 bg-red-700 text-white px-4 py-2'
+                  : 'flex items-center gap-2 font-semibold text-red-600'
               }
               to="/users"
             >
@@ -84,8 +48,8 @@ const Sidebar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
+                  ? 'flex items-center gap-2 bg-red-700 text-white px-4 py-2'
+                  : 'flex items-center gap-2 font-semibold text-red-600'
               }
               to="/xisbi"
             >
@@ -95,8 +59,8 @@ const Sidebar = () => {
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? 'flex items-center gap-2 bg-orange-400 text-white  px-4 py-2 '
-                  : 'flex items-center gap-2 font-semibold text-slate-800'
+                  ? 'flex items-center gap-2 bg-red-700 text-white px-4 py-2'
+                  : 'flex items-center gap-2 font-semibold text-red-600'
               }
               to="/urur"
             >
@@ -108,7 +72,7 @@ const Sidebar = () => {
             <h3 className="text-gray-400 text-sm font-bold">Others</h3>
 
             <Button
-              className="bg-orange-400 hover:bg-orange-500 font-semibold"
+              className="bg-red-400 hover:bg-red-500 font-semibold"
               size="lg"
               onClick={handleLogout}
             >

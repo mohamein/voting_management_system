@@ -19,7 +19,7 @@ const AddUser = ({ form, setForm, handleSubmit }) => {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button className="bg-orange-400 text-white hover:bg-orange-600">
+        <Button className="bg-red-500 text-white hover:bg-red-600">
           Create User
         </Button>
       </DialogTrigger>
@@ -76,6 +76,17 @@ const AddUser = ({ form, setForm, handleSubmit }) => {
                 />
               </div>
               <div className="rounded-md flex flex-col gap-2">
+                <label htmlFor="Phone1">Phone:</label>
+                <Input
+                  name="phone1"
+                  type="text"
+                  className="bg-transparent w-full h-full focus:outline-none "
+                  placeholder="Enter Phone 2 Here...."
+                  value={form.phone1}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="rounded-md flex flex-col gap-2">
                 <label htmlFor="role">Role:</label>
                 <Input
                   name="role"
@@ -102,7 +113,7 @@ const AddUser = ({ form, setForm, handleSubmit }) => {
             <div className="flex justify-end items-center mt-5">
               <Button
                 onClick={handleSubmit}
-                className="bg-orange-400 hover:bg-orange-500"
+                className="bg-red-500 hover:bg-red-600"
               >
                 Submit
               </Button>

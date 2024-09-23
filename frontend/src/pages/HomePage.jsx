@@ -8,7 +8,7 @@ const HomePage = () => {
     navigate('/login');
   }
   return (
-    <div>
+    <div className="h-screen bg-[#ededed]">
       {/* Main content */}
       <Main />
     </div>

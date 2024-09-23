@@ -15,7 +15,6 @@ import {
   UsersPage,
 } from './pages';
 
-import AuthProvider from '@/context/AuthContext';
 import AllPartiesPage from './pages/AllPartiesPage';
 import XisbiyadaPage from './pages/XisbiyadaPage';
 
@@ -38,9 +37,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-      <AuthProvider>
-        <RouterProvider router={router} />;
-      </AuthProvider>
+      <RouterProvider router={router} />;
     </>
   );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import { Input } from './ui/input';
@@ -19,7 +20,7 @@ const AddParties = ({ form, setForm, handleSubmit }) => {
   return (
     <Dialog>
       <DialogTrigger>
-        <Button className="bg-orange-400 text-white hover:bg-orange-600">
+        <Button className="bg-red-500 text-white hover:bg-red-600">
           Create Parties Vote
         </Button>
       </DialogTrigger>

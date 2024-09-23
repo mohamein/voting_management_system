@@ -27,13 +27,19 @@ const presidentialSchema = new Schema(
       type: String,
       required: true,
     },
-    codadkaLumay: {
+    imageUri: {
+      type: String,
+    },
+    Ansaxay: {
       type: String,
       required: true,
     },
-    codadkaKhaldamay: {
+    aanAnSixin: {
       type: String,
       required: true,
+    },
+    description: {
+      type: String,
     },
   },
   {

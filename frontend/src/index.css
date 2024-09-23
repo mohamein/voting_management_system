@@ -71,6 +71,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#ededed] min-h-screen overflow-x-hidden;
   }
 }

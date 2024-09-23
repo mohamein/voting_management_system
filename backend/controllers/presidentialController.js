@@ -1,25 +1,20 @@
 import Presidential from '../models/PresidentialVote.js';
-const createVote = async (req, res) => {
-  const {
-    magalada,
-    goobtaCodka,
-    kulmiye,
-    waddani,
-    ucid,
-    codadkaLumay,
-    codadkaKhaldamay,
-  } = req.body;
 
+const createVote = async (req, res) => {
   try {
+    let { file } = req.body;
+    file = req.file.filename;
+    console.log(file);
     const vote = await Presidential.create({
-      user: req.user.id,
-      magalada: magalada,
-      goobtaCodka: goobtaCodka,
-      kulmiye: kulmiye,
-      waddani: waddani,
-      ucid: ucid,
-      codadkaLumay: codadkaLumay,
-      codadkaKhaldamay: codadkaKhaldamay,
+      magalada: req.body.magalada,
+      goobtaCodka: req.body.goobtaCodka,
+      kulmiye: req.body.kulmiye,
+      waddani: req.body.waddani,
+      ucid: req.body.ucid,
+      Ansaxay: req.body.Ansaxay,
+      aanAnSixin: req.body.aanAnSixin,
+      imageUri: file,
+      user: req.body.user,
     });
 
     if (!vote) {

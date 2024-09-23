@@ -56,7 +56,7 @@ const data = {
 const Charts = () => {
   return (
     <div className="w-[100%] h-[100%] bg-white shadow-md p-4">
-      <Bar data={data} options={options} />;
+      <Bar data={data} options={options} />
     </div>
   );
 };

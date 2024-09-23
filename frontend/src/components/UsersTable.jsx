@@ -28,7 +28,7 @@ const UsersTable = () => {
 
   return (
     <Table>
-      <TableHeader className="bg-slate-700">
+      <TableHeader className="bg-red-600">
         <TableRow>
           <TableHead className="text-white">Full Name:</TableHead>
           <TableHead className="text-white">Username:</TableHead>
