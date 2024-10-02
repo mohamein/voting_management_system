@@ -16,7 +16,9 @@ export const createStation = async (form) => {
 
 export const getAllStations = async () => {
   try {
-    const resp = await ApiManager.get('/places');
+    const resp = await ApiManager.get('/places', {
+      withCredentials: true,
+    });
     const result = await resp.data;
 
     console.log(result);

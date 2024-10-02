@@ -76,10 +76,10 @@ const Sidebar = () => {
                   ? ' text-white  py-2'
                   : 'flex items-center gap-2 font-semibold text-white'
               }
-              to="/users"
+              to="/muraaqib"
             >
               <Users />
-              {isOpen && 'Users'}
+              {isOpen && 'Muraaqib'}
             </NavLink>
 
             <NavLink

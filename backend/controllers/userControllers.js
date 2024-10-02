@@ -63,7 +63,11 @@ const loginUser = async (req, res) => {
           expiresIn: '1h',
         }
       );
-      res.cookie('token', token, { httpOnly: true });
+      res.cookie('token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production', // Use HTTPS in production
+        sameSite: 'Strict',
+      });
       return res.status(201).json({ user: existingUser, token });
     }
   } catch (err) {
