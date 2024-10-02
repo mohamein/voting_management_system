@@ -1,127 +1,116 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from '@/components/ui/dialog';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-const AddUser = ({ form, setForm, handleSubmit }) => {
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+/* eslint-disable react/prop-types */
+import { createUser } from '@/lib/api/users.api';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+
+const AddUser = ({ form, setForm, loading, setLoading }) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const userForm = {
+        full_name: form.fullName,
+        username: form.username,
+        email: form.email,
+        phone: form.phone,
+        phone2: form.phone2,
+        damiin: form.damiin,
+        password: form.password,
+      };
+      await createUser(userForm);
+      setLoading(false);
+      setForm('');
+    } catch (err) {
+      console.log(err);
+    }
+    setLoading(false);
   };
   return (
-    <Dialog>
-      <DialogTrigger>
-        <Button className="bg-red-500 text-white hover:bg-red-600">
-          Create User
+    <div className="flex w-full ">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="flex gap-4 w-[400px]">
+          <div className="flex flex-col gap-2 w-full">
+            <label htmlFor="fullName">FullName:</label>
+            <Input
+              type="text"
+              name="fullName"
+              placeholder="Enter Full Name here.."
+              value={form.fullName}
+              onChange={(e) => setForm({ ...form, fullName: e.target.value })}
+            />
+          </div>
+          <div className="flex flex-col gap-2 w-full">
+            <label htmlFor="username">Username:</label>
+            <Input
+              type="text"
+              name="username"
+              placeholder="Enter Full Name here.."
+              value={form.username}
+              onChange={(e) => setForm({ ...form, username: e.target.value })}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col w-[400px]">
+          <label htmlFor="email">Email</label>
+          <Input
+            type="email"
+            name="email"
+            placeholder="Enter Email Here..."
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+          />
+        </div>
+        <div className="flex flex-col w-[400px]">
+          <label htmlFor="phone">Phone</label>
+          <Input
+            type="text"
+            name="phone"
+            placeholder="Enter Phone Here..."
+            value={form.phone}
+            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+          />
+        </div>
+        <div className="flex flex-col w-[400px]">
+          <label htmlFor="phone2">Another Phone</label>
+          <Input
+            type="text"
+            name="phone2"
+            placeholder="Enter Another Phone Here..."
+            value={form.phone2}
+            onChange={(e) => setForm({ ...form, phone2: e.target.value })}
+          />
+        </div>
+        <div className="flex flex-col w-[400px]">
+          <label htmlFor="damiin">Damiin</label>
+          <Input
+            type="text"
+            name="damiin"
+            placeholder="Enter Name Here..."
+            value={form.damiin}
+            onChange={(e) => setForm({ ...form, damiin: e.target.value })}
+          />
+        </div>
+        <div className="flex flex-col w-[400px]">
+          <label htmlFor="password">Password</label>
+          <Input
+            type="password"
+            name="password"
+            placeholder="Enter Password Here..."
+            value={form.password}
+            onChange={(e) => setForm({ ...form, password: e.target.value })}
+          />
+        </div>
+
+        <Button
+          type="submit"
+          disable={loading}
+          className="bg-red-500 hover:bg-red-600 text-white font-semibold rounded-sm w-full"
+        >
+          {loading ? 'Submitting..' : 'Submit'}
         </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>Fill out the form to create a user.</DialogTitle>
-        </DialogHeader>
-
-        <Card>
-          <CardContent>
-            <form className="space-y-3">
-              <div className="rounded-md flex flex-col gap-2">
-                <label htmlFor="username">Full Name:</label>
-                <Input
-                  name="fullName"
-                  type="text"
-                  className="bg-transparent w-full h-full focus:outline-none "
-                  placeholder="Enter Full Name...."
-                  value={form.fullName}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="rounded-md flex flex-col gap-2">
-                <label htmlFor="username">Username:</label>
-                <Input
-                  name="username"
-                  type="text"
-                  className="bg-transparent w-full h-full focus:outline-none "
-                  placeholder="Enter Username Here...."
-                  value={form.username}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="rounded-md flex flex-col gap-2">
-                <label htmlFor="email">Email:</label>
-                <Input
-                  name="email"
-                  type="text"
-                  className="bg-transparent w-full h-full focus:outline-none "
-                  placeholder="Enter Email Here...."
-                  value={form.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="rounded-md flex flex-col gap-2">
-                <label htmlFor="Phone">Phone:</label>
-                <Input
-                  name="phone"
-                  type="text"
-                  className="bg-transparent w-full h-full focus:outline-none "
-                  placeholder="Enter Phone Here...."
-                  value={form.phone}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="rounded-md flex flex-col gap-2">
-                <label htmlFor="Phone1">Phone:</label>
-                <Input
-                  name="phone1"
-                  type="text"
-                  className="bg-transparent w-full h-full focus:outline-none "
-                  placeholder="Enter Phone 2 Here...."
-                  value={form.phone1}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="rounded-md flex flex-col gap-2">
-                <label htmlFor="role">Role:</label>
-                <Input
-                  name="role"
-                  type="text"
-                  className="bg-transparent w-full h-full focus:outline-none "
-                  placeholder="Enter User Role...."
-                  value={form.role}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="rounded-md flex flex-col gap-2">
-                <label htmlFor="password">Password:</label>
-                <Input
-                  name="password"
-                  type="password"
-                  className="bg-transparent w-full h-full focus:outline-none "
-                  placeholder="Enter User Password...."
-                  value={form.password}
-                  onChange={handleChange}
-                />
-              </div>
-            </form>
-
-            <div className="flex justify-end items-center mt-5">
-              <Button
-                onClick={handleSubmit}
-                className="bg-red-500 hover:bg-red-600"
-              >
-                Submit
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </DialogContent>
-    </Dialog>
+      </form>
+    </div>
   );
 };
 

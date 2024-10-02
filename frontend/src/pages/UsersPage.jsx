@@ -1,36 +1,14 @@
-import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import UsersTable from '@/components/UsersTable';
-import AddUser from '@/components/AddUser';
-import { createUser } from '../api/user_creation';
-const UsersPage = () => {
-  const [form, setForm] = useState({
-    fullName: '',
-    username: '',
-    email: '',
-    phone: '',
-    phone1: '',
-    role: '',
-    password: '',
-  });
+import { Link } from 'react-router-dom';
 
-  const handleSubmit = async () => {
-    const user = await createUser({
-      full_name: form.fullName,
-      username: form.username,
-      email: form.email,
-      phone: form.phone,
-      phone1: form.phone1,
-      role: form.role,
-      password: form.password,
-    });
-    return user;
-  };
+const UsersPage = () => {
   return (
     <div className="flex flex-col justify-start space-y-4">
       {/* Dialog Form */}
-      <div className="flex items-start">
-        <AddUser form={form} setForm={setForm} handleSubmit={handleSubmit} />
-      </div>
+      <Button className="bg-red-500 text-white font-semibold text-md px-6 py-2 w-36 rounded-sm hover:bg-red-600">
+        <Link to="/create">Create User</Link>
+      </Button>
       {/* Users Table */}
       <div className="bg-white shadow-md rounded-md">
         <UsersTable />

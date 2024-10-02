@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Card,
   CardContent,
@@ -8,7 +9,6 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from './ui/button';
 
-// eslint-disable-next-line react/prop-types
 const LoginCard = ({
   handleSubmit,
   username,

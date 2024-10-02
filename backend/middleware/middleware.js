@@ -2,6 +2,7 @@ import User from '../models/User.js';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 dotenv.config();
+
 const isAdmin = async (req, res, next) => {
   try {
     const user = await User.find();

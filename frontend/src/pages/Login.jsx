@@ -1,24 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginCard from '../components/LoginCard';
-import axios from 'axios';
+import { loginUser } from '@/lib/api/users.api';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    const resp = await axios.post(
-      'https://voting-management-system-kxjt.onrender.com/api/v1/users/login',
-      {
-        username,
-        password,
-      }
-    );
-    localStorage.setItem('token', JSON.stringify(resp.data.token));
-    localStorage.setItem('user', JSON.stringify(resp.data.user));
-
-    console.log(resp.data);
+    const resp = await loginUser(username, password);
     if (resp) {
       navigate('/');
     }

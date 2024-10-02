@@ -4,5 +4,21 @@ import WadaniPage from './WadaniPage';
 import UcidPage from './UcidPage';
 import Login from './Login';
 import UsersPage from './UsersPage';
-
-export { HomePage, KulmiyePage, WadaniPage, UcidPage, Login, UsersPage };
+import CreateParties from './CreateParties';
+import AllPartiesPage from './AllPartiesPage';
+import CreateUserPage from './CreateUserPage';
+import StationsPage from './StationsPage';
+import CreateStation from './CreateStation';
+export {
+  HomePage,
+  KulmiyePage,
+  WadaniPage,
+  UcidPage,
+  Login,
+  UsersPage,
+  CreateParties,
+  CreateUserPage,
+  AllPartiesPage,
+  StationsPage,
+  CreateStation,
+};

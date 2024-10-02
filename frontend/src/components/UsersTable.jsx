@@ -8,15 +8,16 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getAllUsers } from '../api/user_creation';
+
 import { Edit, Trash } from 'lucide-react';
+import { getUsers } from '@/lib/api/users.api';
 const UsersTable = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const usersData = await getAllUsers();
+        const usersData = await getUsers();
         console.log(usersData);
         setUsers(usersData);
       } catch (err) {

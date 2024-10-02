@@ -1,32 +1,14 @@
-import AddParties from '@/components/AddParties';
-import PartiesGraph from '@/components/PartiesGraph';
-import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const AllParties = () => {
-  const [form, setForm] = useState({
-    magalada: '',
-    goobtCodbixinta: '',
-    kulmiye: '',
-    waddani: '',
-    ucid: '',
-    kaah: '',
-    hilaac: '',
-    horseed: '',
-    barwaaqo: '',
-    rajo: '',
-    codadkaLumay: '',
-    codadkaKhaldamay: '',
-  });
-
-  const handleSubmit = async () => {};
   return (
     <div className="justify-start space-y-3 w-full">
-      <h2 className="text-2xl font-semibold text-slate-600">
-        Natiijada Urarada:
-      </h2>
-      <AddParties form={form} setForm={setForm} handleSubmit={handleSubmit} />
+      <Button className="bg-red-500 text-white rounded-sm w-36 px-6 py-2 font-semibold hover:bg-red-600">
+        <Link to="/createVote">Create Vote</Link>
+      </Button>
       <div className="bg-white shadow-md rounded-md">
-        <PartiesGraph />
+        Liiska Codadka Laso gudbiyey.
       </div>
     </div>
   );

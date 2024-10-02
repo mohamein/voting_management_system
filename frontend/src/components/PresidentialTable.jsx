@@ -8,19 +8,19 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getAllVotes } from '@/api/presidentila_api';
+
 import { Edit, Trash } from 'lucide-react';
 const PresidentialTable = () => {
   const [votes, setVotes] = useState([]);
 
-  useEffect(() => {
-    const fetchVotes = async () => {
-      const resp = await getAllVotes();
-      setVotes(resp.data);
-    };
+  // useEffect(() => {
+  //   const fetchVotes = async () => {
+  //     const resp = await getAllVotes();
+  //     setVotes(resp.data);
+  //   };
 
-    fetchVotes();
-  }, []);
+  //   fetchVotes();
+  // }, []);
 
   return (
     <Table>

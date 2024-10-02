@@ -13,10 +13,12 @@ import {
   WadaniPage,
   Login,
   UsersPage,
+  AllPartiesPage,
+  CreateParties,
+  CreateUserPage,
+  StationsPage,
+  CreateStation,
 } from './pages';
-
-import AllPartiesPage from './pages/AllPartiesPage';
-import XisbiyadaPage from './pages/XisbiyadaPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,8 +29,11 @@ const router = createBrowserRouter(
         <Route path="wadani" element={<WadaniPage />} />
         <Route path="ucid" element={<UcidPage />} />
         <Route path="users" element={<UsersPage />} />
+        <Route path="create" element={<CreateUserPage />} />
         <Route path="urur" element={<AllPartiesPage />} />
-        <Route path="xisbi" element={<XisbiyadaPage />} />
+        <Route path="createVote" element={<CreateParties />} />
+        <Route path="xarumaha" element={<StationsPage />} />
+        <Route path="createStation" element={<CreateStation />} />
       </Route>
       <Route path="/login" element={<Login />} />
     </>

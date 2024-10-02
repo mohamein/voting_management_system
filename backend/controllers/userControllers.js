@@ -4,13 +4,16 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 dotenv.config();
 const createUser = async (req, res) => {
-  const { full_name, username, email, phone, password } = req.body;
+  const { full_name, username, email, phone, phone2, damiin, password } =
+    req.body;
   try {
     if (
       full_name === '' ||
       username === '' ||
       email === '' ||
       phone === '' ||
+      phone2 === '' ||
+      damiin === '' ||
       password === ''
     ) {
       return res.status(403).json({ message: 'please provide all fields' });
@@ -22,6 +25,8 @@ const createUser = async (req, res) => {
       username: username,
       email: email,
       phone: phone,
+      phone2: phone2,
+      damiin: damiin,
       password: hashPwd,
     });
     if (!user) {

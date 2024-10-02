@@ -46,6 +46,14 @@ const partiesSchema = new Schema(
       type: String,
       required: true,
     },
+    taloWadaag: {
+      type: String,
+      required: true,
+    },
+    shacabka: {
+      type: String,
+      required: true,
+    },
     Ansaxay: {
       type: String,
       required: true,
@@ -53,6 +61,9 @@ const partiesSchema = new Schema(
     aanAnSixin: {
       type: String,
       required: true,
+    },
+    imageUri: {
+      type: String,
     },
     description: {
       type: String,

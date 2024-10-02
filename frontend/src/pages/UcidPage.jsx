@@ -8,17 +8,17 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getUcid } from '@/api/presidentila_api';
+
 const UcidPage = () => {
   const [vote, setVote] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const resp = await getUcid();
-      setVote(resp.data);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const resp = await getUcid();
+  //     setVote(resp.data);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="flex flex-col gap-4">

@@ -8,17 +8,16 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getKulmiye } from '@/api/presidentila_api';
 const KulmiyePage = () => {
   const [vote, setVote] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const resp = await getKulmiye();
-      setVote(resp.data);
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const resp = await getKulmiye();
+  //     setVote(resp.data);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="flex flex-col gap-4">
