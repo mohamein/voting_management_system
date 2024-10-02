@@ -4,7 +4,7 @@ import { checkIfUserLogged } from '../middleware/middleware.js';
 
 const router = express.Router();
 
-router.post('/create', checkIfUserLogged, createStation);
-router.get('/', checkIfUserLogged, getStations);
+router.post('/create', createStation);
+router.get('/', getStations);
 
 export default router;
