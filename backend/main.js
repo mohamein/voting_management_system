@@ -17,9 +17,25 @@ dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+// List of allowed origins
+const allowedOrigins = [
+  'http://localhost:5173', // Local development
+  'https://voting-management-system-sandy.vercel.app', // Production frontend
+];
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:5173', // Allow the React frontend
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or Postman)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        // If the origin is in the allowed list, allow the request
+        callback(null, true);
+      } else {
+        // If the origin is not in the allowed list, block the request
+        callback(new Error('Not allowed by CORS'));
+      }
+    }, // Allow the React frontend
     methods: ['GET', 'POST'],
     allowedHeaders: ['my-custom-header'],
     credentials: true,
@@ -28,7 +44,23 @@ const io = new Server(server, {
 
 socketSetup(io);
 
-app.use(cors({ credentials: true, origin: 'http://localhost:5173' }));
+app.use(
+  cors({
+    credentials: true,
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or Postman)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        // If the origin is in the allowed list, allow the request
+        callback(null, true);
+      } else {
+        // If the origin is not in the allowed list, block the request
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  })
+);
 app.use(bodyParser.json());
 app.use(cookieParser());
 

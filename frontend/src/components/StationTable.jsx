@@ -36,7 +36,7 @@ const StationTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {stations?.map((station) => (
+        {stations.stations?.map((station) => (
           <TableRow key={station.id}>
             <TableCell>{station.gobolka}</TableCell>
             <TableCell>{station.degmada}</TableCell>

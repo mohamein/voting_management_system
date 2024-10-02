@@ -7,7 +7,7 @@ const StationsPage = () => {
       <Button className="bg-red-500 text-white font-semibold w-36 px-6 py-2 rounded-sm hover:bg-red-600">
         <Link to="/createStation">Diwan Geli</Link>
       </Button>
-      <div className="bg-white w-full">
+      <div className="bg-white">
         <StationTable />
       </div>
     </div>
