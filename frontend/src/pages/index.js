@@ -9,6 +9,7 @@ import AllPartiesPage from './AllPartiesPage';
 import CreateUserPage from './CreateUserPage';
 import StationsPage from './StationsPage';
 import CreateStation from './CreateStation';
+import UploadPage from './UploadPage';
 export {
   HomePage,
   KulmiyePage,
@@ -21,4 +22,5 @@ export {
   AllPartiesPage,
   StationsPage,
   CreateStation,
+  UploadPage,
 };

@@ -50,7 +50,7 @@ const VoteTable = () => {
       </TableHeader>
 
       <TableBody>
-        {votes?.map((vote) => (
+        {votes.party?.map((vote) => (
           <TableRow key={vote._id}>
             <TableCell>{vote.magalada}</TableCell>
             <TableCell>{vote.goobtaCodka}</TableCell>

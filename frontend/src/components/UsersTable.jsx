@@ -35,7 +35,7 @@ const UsersTable = () => {
           <TableHead className="text-white">Username:</TableHead>
           <TableHead className=" text-white">Email:</TableHead>
           <TableHead className=" text-white">Phone:</TableHead>
-          <TableHead className=" text-white">Role:</TableHead>
+          <TableHead className=" text-white">Damiin:</TableHead>
           <TableHead className=" text-white"></TableHead>
         </TableRow>
       </TableHeader>
@@ -46,7 +46,7 @@ const UsersTable = () => {
             <TableCell>{user.username}</TableCell>
             <TableCell>{user.email}</TableCell>
             <TableCell>{user.phone}</TableCell>
-            <TableCell>{user.role}</TableCell>
+            <TableCell>{user.damiin}</TableCell>
             <TableCell>
               <button className="flex gap-2">
                 <Edit className="text-red-300 w-[20px]" /> /

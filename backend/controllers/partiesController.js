@@ -31,6 +31,7 @@ const createParties = async (req, res) => {
       user: req.user.id,
       magalada,
       goobtaCodka,
+      lrGoobta,
       kulmiye,
       waddani,
       ucid,
@@ -62,9 +63,9 @@ const createParties = async (req, res) => {
   }
 };
 
-const getParties = async () => {
+const getParties = async (req, res) => {
   try {
-    const party = await Parties.find();
+    const party = await Parties.find().populate('user');
     if (!party) {
       res.status(404).json({ message: 'No Party Found' });
     }

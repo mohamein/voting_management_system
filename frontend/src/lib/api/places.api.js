@@ -24,6 +24,6 @@ export const getAllStations = async () => {
     console.log(result);
     return result;
   } catch (err) {
-    console.log('Error occurred while getting a stations');
+    console.log('Error occurred while getting a stations', err.message);
   }
 };

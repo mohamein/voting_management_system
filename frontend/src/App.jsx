@@ -17,6 +17,7 @@ import {
   CreateUserPage,
   StationsPage,
   CreateStation,
+  UploadPage,
 } from './pages';
 
 const router = createBrowserRouter(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
         <Route path="muraaqib" element={<UsersPage />} />
         <Route path="create" element={<CreateUserPage />} />
         <Route path="urur" element={<AllPartiesPage />} />
+        <Route path="upload" element={<UploadPage />} />
         <Route path="xarumaha" element={<StationsPage />} />
         <Route path="createStation" element={<CreateStation />} />
       </Route>

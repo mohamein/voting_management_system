@@ -23,6 +23,8 @@ const StationTable = () => {
     };
     fetchStation();
   }, []);
+
+  console.log(stations.stations);
   return (
     <Table>
       <TableHeader className="bg-red-500">
@@ -36,8 +38,8 @@ const StationTable = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {stations.stations?.map((station) => (
-          <TableRow key={station.id}>
+        {stations?.stations?.map((station) => (
+          <TableRow key={station._id}>
             <TableCell>{station.gobolka}</TableCell>
             <TableCell>{station.degmada}</TableCell>
             <TableCell>{station.magacGoobta}</TableCell>

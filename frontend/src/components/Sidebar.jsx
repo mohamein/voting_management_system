@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { LayoutDashboard, Users, Vote, LogOut, Home } from 'lucide-react';
+import {
+  LayoutDashboard,
+  Users,
+  Vote,
+  LogOut,
+  Home,
+  ImageDownIcon,
+} from 'lucide-react';
 import { Button } from './ui/button';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -108,6 +115,19 @@ const Sidebar = () => {
             >
               <Vote />
               {isOpen && 'Codadka'}
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive && isOpen
+                  ? 'flex items-center gap-2 bg-white text-red-700 px-4 py-2'
+                  : isActive && !isOpen
+                  ? ' text-white  py-2'
+                  : 'flex items-center gap-2 font-semibold text-white'
+              }
+              to="/upload"
+            >
+              <ImageDownIcon />
+              {isOpen && 'Sawirada Formka'}
             </NavLink>
           </ul>
 
