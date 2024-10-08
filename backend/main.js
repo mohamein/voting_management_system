@@ -20,6 +20,7 @@ const server = http.createServer(app);
 const allowedOrigins = [
   'http://localhost:5173', // Local development
   'https://voting-management-system-sandy.vercel.app', // Production frontend
+  'exp://192.168.172.1:8081',
 ];
 
 const io = new Server(server, {
@@ -35,7 +36,7 @@ const io = new Server(server, {
         callback(new Error('Not allowed by CORS'));
       }
     }, // Allow the React frontend
-    methods: ['GET', 'POST'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
   },
@@ -57,6 +58,8 @@ app.use(
         callback(new Error('Not allowed by CORS'));
       }
     },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 app.use(bodyParser.json());
