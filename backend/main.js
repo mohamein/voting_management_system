@@ -20,7 +20,9 @@ const server = http.createServer(app);
 const allowedOrigins = [
   'http://localhost:5173', // Local development
   'https://voting-management-system-sandy.vercel.app', // Production frontend
-  'exp://192.168.172.1:8081',
+  'http://exp://192.168.172.1:8081',
+  'http://localhost:8081',
+  'http://192.168.172.1:8081',
 ];
 
 const io = new Server(server, {

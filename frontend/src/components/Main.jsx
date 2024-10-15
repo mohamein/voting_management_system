@@ -3,8 +3,7 @@ import AllParties from './AllParties';
 import Cards from './Cards';
 import PartiesGraph from './PartiesGraph';
 import PartiesLineGraph from './PartiesLineGraph';
-import PartiesMap from './PartiesMap';
-import PartiesPieChart from './partiesPieChart';  // Import the Pie Chart component
+import PartiesPieChart from './partiesPieChart'; // Import the Pie Chart component
 import PromotionComponent from './PromotionComponent';
 
 const Main = () => {
@@ -18,12 +17,10 @@ const Main = () => {
     switch (graphType) {
       case 'histogram':
         return <PartiesGraph />;
-      case 'map':
-        return <PartiesMap />;
       case 'line':
         return <PartiesLineGraph />;
       case 'pie':
-        return <PartiesPieChart />;  // Render Pie Chart when selected
+        return <PartiesPieChart />; // Render Pie Chart when selected
       default:
         return <PartiesGraph />;
     }
@@ -41,9 +38,8 @@ const Main = () => {
             value={graphType}
           >
             <option value="histogram">Histogram</option>
-            <option value="map">Map</option>
             <option value="line">Line Graph</option>
-            <option value="pie">Pie Chart</option>  {/* New Pie Chart option */}
+            <option value="pie">Pie Chart</option> {/* New Pie Chart option */}
           </select>
         </div>
 
