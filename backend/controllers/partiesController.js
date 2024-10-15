@@ -19,7 +19,7 @@ const createParties = async (req, res) => {
     description,
   } = req.body;
 
-  const file = req.file.filename;
+  const file = req.file.fileName;
 
   console.log(file);
   if (!file) {
